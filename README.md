@@ -42,7 +42,10 @@ serves it at arbitrary URLs.
    - `www` CNAME → `brier-capital.github.io`
 4. Leave MX, DMARC and DKIM alone. In the SPF (TXT) record remove only the `a` mechanism, which would
    otherwise authorize the new web host's IPs to send mail for the domain.
-5. Once the certificate issues, tick "Enforce HTTPS" in the Pages settings.
+5. Once the certificate issues, tick "Enforce HTTPS" in the Pages settings. If no certificate appears
+   within ~15 minutes of the DNS change (Pages API `https_certificate` stays null), remove and restore
+   the custom domain: commit a deletion of `CNAME`, push, wait for the build, then restore it. On
+   2026-09-28 that issued the certificate within 30 seconds after 45 minutes of waiting.
 
 ## Content rules
 
