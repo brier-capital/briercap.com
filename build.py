@@ -139,6 +139,7 @@ def render(fname, title, desc, h1, date, sections):
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 {CSP}  <title>{title} · Brier Capital</title>
+  <link rel="canonical" href="https://briercap.com/{fname}">
   <meta name="description" content="{desc}">
   <meta name="theme-color" content="#f5f5f2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0c1624" media="(prefers-color-scheme: dark)">
